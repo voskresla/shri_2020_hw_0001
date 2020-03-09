@@ -691,11 +691,10 @@ svg {
 }
 
 .input__controls-append .button {
-  z-index: -1;
-
+  /* z-index: -1; */
   height: 100%;
 
-  background-color: transparent;
+  background-color: #fff;
 }
 
 /* не портим высоту border'ом и вводим его через :after 
@@ -716,6 +715,28 @@ TODO: возможно стоить завести отдельный модиф
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 0;
+}
+
+.input:focus {
+  border-top: 2px solid var(--color-control-450);
+  border-right: 2px solid var(--color-control-450);
+  border-bottom: 2px solid var(--color-control-450);
+  border-left: 2px solid var(--color-control-450);
+  outline: 0;
+}
+
+.input:focus ~ .input__controls-append .button:after {
+  border-top: 2px solid var(--color-control-450);
+  border-right: 2px solid var(--color-control-450);
+  border-bottom: 2px solid var(--color-control-450);
+  /* background-color: red; */
+}
+
+.input ~ .input__controls-append .button:focus {
+  outline: 0;
+}
+.input ~ .input__controls-append .button:focus .icon {
+  color: var(--color-control-450);
 }
 
 /* card  */
